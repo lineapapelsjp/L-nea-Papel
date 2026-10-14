@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Línea Papel | Detalles impresos que hacen la diferencia</title>
+  <meta name="description" content="Línea Papel: tarjetas de presentación, impresiones y papelería personalizada con atención al detalle.">
+
+  <style>
+    :root {
+      --crema: #F2EBDD;
+      --negro: #24231F;
+      --oliva: #66734E;
+      --blanco: #FFFFFF;
+      --gris: #6D6B63;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--crema);
+      color: var(--negro);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(36, 35, 31, 0.12);
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 27px;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--oliva);
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--oliva);
+    }
+
+    .hero {
+      padding: 90px 7%;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .etiqueta {
+      color: var(--oliva);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.08;
+      margin: 20px 0;
+      font-weight: normal;
+    }
+
+    h1 span {
+      color: var(--oliva);
+      font-style: italic;
+    }
+
+    .hero p {
+      color: var(--gris);
+      max-width: 520px;
+      margin-bottom: 28px;
+      font-size: 17px;
+    }
+
+    .boton {
+      display: inline-block;
+      background: var(--oliva);
+      color: var(--blanco);
+      padding: 13px 22px;
+      border-radius: 3px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .boton:hover {
+      background: var(--negro);
+    }
+
+    .hero-visual {
+      min-height: 310px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .papel {
+      width: 230px;
+      height: 290px;
+      background: var(--blanco);
+      padding: 28px;
+      box-shadow: 12px 14px 0 var(--oliva);
+      transform: rotate(3deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .papel .marca {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      line-height: 1.1;
+    }
+
+    .papel .linea {
+      width: 45px;
+      height: 3px;
+      background: var(--oliva);
+      margin: 17px 0;
+    }
+
+    .papel small {
+      color: var(--gris);
+      font-size: 10px;
+    }
+
+    section {
+      padding: 75px 7%;
+      scroll-margin-top: 20px;
+    }
+
+    .seccion-titulo {
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .introduccion {
+      color: var(--gris);
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .sobre {
+      background: var(--blanco);
+    }
+
+    .tres-columnas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .tarjeta {
+      padding: 28px;
+      background: var(--crema);
+      border-top: 3px solid var(--oliva);
+    }
+
+    .tarjeta h3 {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .tarjeta p {
+      font-size: 14px;
+      color: var(--gris);
+    }
+
+    .objetivos {
+      background: var(--oliva);
+      color: var(--blanco);
+    }
+
+    .objetivos .introduccion {
+      color: #F0EFE8;
+    }
+
+    .lista-objetivos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      list-style: none;
+    }
+
+    .lista-objetivos li {
+      padding: 18px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .lista-objetivos li::before {
+      content: "— ";
+      font-weight: bold;
+    }
+
+    .servicios {
+      background: var(--crema);
+    }
+
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .servicio {
+      background: var(--blanco);
+      padding: 25px;
+      min-height: 205px;
+      border: 1px solid rgba(36, 35, 31, 0.08);
+    }
+
+    .numero {
+      color: var(--oliva);
+      font-family: Georgia, serif;
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .servicio h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .servicio p {
+      color: var(--gris);
+      font-size: 14px;
+    }
+
+    .destacado {
+      background: var(--blanco);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .muestra-tarjetas {
+      background: var(--crema);
+      min-height: 260px;
+      padding: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tarjeta-muestra {
+      background: var(--oliva);
+      color: var(--blanco);
+      width: 270px;
+      min-height: 155px;
+      padding: 25px;
+      box-shadow: 8px 8px 0 #D9D0BC;
+    }
+
+    .tarjeta-muestra h3 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    .tarjeta-muestra p {
+      font-size: 11px;
+      margin-top: 12px;
+    }
+
+    .destacado p {
+      color: var(--gris);
+      margin: 15px 0 24px;
+    }
+
+    .contacto {
+      text-align: center;
+      background: var(--negro);
+      color: var(--crema);
+    }
+
+    .contacto .introduccion {
+      margin: 0 auto 25px;
+      color: #D2D0C8;
+    }
+
+    footer {
+      background: var(--negro);
+      color: #D2D0C8;
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    @media (max-width: 800px) {
+      .hero,
+      .destacado {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .tres-columnas,
+      .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .tres-columnas,
+      .servicios-grid,
+      .lista-objetivos {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+
+      .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#inicio" class="logo">Línea <span>Papel.</span></a>
+
+    <nav aria-label="Navegación principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#objetivos">Objetivos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <div class="etiqueta">Papelería e impresión</div>
+        <h1>Ideas que toman forma en <span>papel.</span></h1>
+        <p>
+          Creamos detalles impresos que comunican tu identidad,
+          acompañan tus proyectos y hacen especial cada presentación.
+        </p>
+        <a class="boton" href="#servicios">Conoce nuestros servicios</a>
+      </div>
+
+      <div class="hero-visual" aria-label="Diseño ilustrativo de papelería">
+        <div class="papel">
+          <div class="marca">Línea<br><strong>Papel.</strong></div>
+          <div class="linea"></div>
+          <small>DETALLES IMPRESOS<br>QUE HACEN LA DIFERENCIA.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="sobre" id="nosotros">
+      <div class="etiqueta">Quiénes somos</div>
+      <h2 class="seccion-titulo">Pequeños detalles, grandes impresiones.</h2>
+      <p class="introduccion">
+        Línea Papel es un emprendimiento de impresión y papelería
+        que busca ofrecer soluciones prácticas, creativas y accesibles
+        para personas, profesionales y pequeños negocios.
+        Trabajamos con atención al detalle para dar forma a cada idea.
+      </p>
+
+      <div class="tres-columnas">
+        <article class="tarjeta">
+          <h3>Misión</h3>
+          <p>
+            Brindar productos impresos y soluciones de papelería
+            con atención personalizada, calidad y precios accesibles,
+            ayudando a nuestros clientes a presentar sus ideas
+            de manera profesional.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Visión</h3>
+          <p>
+            Ser una marca de confianza en impresión y papelería
+            personalizada en Guatemala, reconocida por su creatividad,
+            servicio cercano y compromiso con cada cliente.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Valores</h3>
+          <p>
+            Responsabilidad, creatividad, honestidad, atención al
+            detalle y compromiso con la satisfacción del cliente.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="objetivos" id="objetivos">
+      <div class="etiqueta">Nuestro propósito</div>
+      <h2 class="seccion-titulo">Objetivos de Línea Papel</h2>
+      <p class="introduccion">
+        Crecer de forma sostenible, ofreciendo productos útiles
+        y construyendo relaciones duraderas con nuestros clientes.
+      </p>
+
+      <ul class="lista-objetivos">
+        <li>Ofrecer impresiones cuidadas y presentaciones profesionales.</li>
+        <li>Facilitar el acceso a papelería para personas y emprendimientos.</li>
+        <li>Ampliar progresivamente el catálogo según la demanda.</li>
+        <li>Brindar atención clara, amable y personalizada.</li>
+        <li>Mantener precios transparentes y cotizaciones oportunas.</li>
+        <li>Construir una marca reconocida por su calidad y confianza.</li>
+      </ul>
+    </section>
+
+    <section class="servicios" id="servicios">
+      <div class="etiqueta">Qué ofrecemos</div>
+      <h2 class="seccion-titulo">Servicios de impresión y papelería</h2>
+      <p class="introduccion">
+        Soluciones para presentar tu negocio, organizar tus ideas
+        y dar vida a tus proyectos. Consulta disponibilidad y cotiza
+        tu pedido según el diseño, el papel y la cantidad.
+      </p>
+
+      <div class="servicios-grid">
+        <article class="servicio">
+          <div class="numero">01</div>
+          <h3>Tarjetas de presentación</h3>
+          <p>
+            Tarjetas para profesionales, emprendedores y negocios,
+            con diseños personalizados y opciones de impresión.
+          </p>
+        </article>
+
+        <article class="servicio">
+          <div class="numero">02</div>
+          <h3>Impresión de documentos</h3>
+          <p>
+            Impresiones de documentos y materiales de trabajo
+            en papel bond, según las características del archivo.
+          </p>
+        </article>
+
+        <article class="servicio">
+          <div class="numero">03</div>
+          <h3>Papelería personalizada</h3>
+          <p>
+            Diseños para uso personal, profesional o comercial,
+            sujetos a disponibilidad de materiales.
+          </p>
+        </article>
+
+        <article class="servicio">
+          <div class="numero">04</div>
+          <h3>Sobres y papelería comercial</h3>
+          <p>
+            Opciones de sobres y materiales impresos para
+            identificar y presentar tu negocio.
+          </p>
+        </article>
+
+        <article class="servicio">
+          <div class="numero">05</div>
+          <h3>Impresiones en papel especial</h3>
+          <p>
+            Trabajos en opalina y papel fotográfico mate o brillante,
+            de acuerdo con el tipo de proyecto.
+          </p>
+        </article>
+
+        <article class="servicio">
+          <div class="numero">06</div>
+          <h3>Proyectos especiales</h3>
+          <p>
+            Cuéntanos qué necesitas y evaluaremos los materiales,
+            el formato y las posibilidades de producción.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="destacado">
+      <div class="muestra-tarjetas">
+        <div class="tarjeta-muestra">
+          <h3>Línea Papel.</h3>
+          <p>Tu marca también merece una buena presentación.</p>
+          <p>Tarjetas de presentación personalizadas</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="etiqueta">Un buen comienzo</div>
+        <h2 class="seccion-titulo">Tu primera impresión cuenta.</h2>
+        <p>
+          Las tarjetas de presentación ayudan a compartir tus datos
+          y a que tus clientes recuerden tu negocio. Solicita una
+          cotización y personaliza tu diseño con nosotros.
+        </p>
+        <a class="boton" href="#contacto">Solicitar información</a>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <div class="etiqueta">Hablemos de tu proyecto</div>
+      <h2 class="seccion-titulo">Démosle forma a tu idea.</h2>
+      <p class="introduccion">
+        Escríbenos para consultar precios, disponibilidad,
+        diseños personalizados y opciones de entrega.
+      </p>
+
+      <!-- Reemplaza el número de ejemplo por tu WhatsApp real.
+           Usa el formato internacional, solo números, sin + ni espacios. -->
+      <a
+        class="boton"
+        href="https://wa.me/50235126694"
+        target="_blank"
+        rel="noopener noreferrer">
+        Contactar por WhatsApp
+      </a>
+
+      <p style="font-size: 13px; margin-top: 20px;">
+        San José Pinula y sectores cercanos de Guatemala.
+        Envíos a otros departamentos sujetos a cotización.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="anio"></span> Línea Papel. Todos los derechos reservados.</p>
+    <p>Detalles impresos que hacen la diferencia.</p>
+  </footer>
+
+  <script>
+    document.getElementById("anio").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
